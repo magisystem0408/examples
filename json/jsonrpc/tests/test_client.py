@@ -6,7 +6,7 @@ r = requests.post('http://127.0.0.1:8080/', json={
     'method': 'ping',
     'params': [],
     'id': 1
-})
+}, timeout=60)
 print(r.json())
 
 
@@ -16,7 +16,7 @@ r = requests.post('http://127.0.0.1:8080/', json={
     'method': 'wait',
     'params': [4],
     'id': 1
-})
+}, timeout=60)
 print(r.json())
 
 for i in range(10):
@@ -26,7 +26,7 @@ for i in range(10):
         'method': 'inc',
         'params': [],
         'id': 1
-    })
+    }, timeout=60)
 
 print(f'get')
 r = requests.post('http://127.0.0.1:8080/', json={
@@ -34,5 +34,5 @@ r = requests.post('http://127.0.0.1:8080/', json={
     'method': 'get',
     'params': [],
     'id': 1
-})
+}, timeout=60)
 print(r.json())
